@@ -1,0 +1,23 @@
+{
+  "name": "philly-sites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorPawlewicz/philly-sites.git"
+  },
+  "author": "trev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrevorPawlewicz/philly-sites/issues"
+  },
+  "homepage": "https://github.com/TrevorPawlewicz/philly-sites#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "normalize.css": "^5.0.0"
+  }
+}
