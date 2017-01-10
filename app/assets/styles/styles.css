@@ -1,4 +1,6 @@
-/* import partials */
+/* import partials to be used by GULP file */
 @import "normalize.css";
 @import "base/_global";
+@import "base/_variables";
 @import "modules/_large-hero";
+@import "modules/_btn"
