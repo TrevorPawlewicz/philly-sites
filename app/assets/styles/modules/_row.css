@@ -10,10 +10,20 @@
         padding-right: 65px;
     }
 
+    &__b-margin-until-medium {
+        margin-bottom: 1rem;
+    }
+
+
     @mixin atMedium {
+
+        &__b-margin-until-medium {
+            margin-bottom: 0;
+        }
+
         &__medium-4 {
             float: left;
-            /* 100/12 = 8.333, 8.333 * 4 = 33.33 */
+            /*  100/12 = 8.333, 8.333 * 4 = 33.33 */
             width: 33.33%;
         }
         &__medium-4--lager {
