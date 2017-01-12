@@ -1,0 +1,18 @@
+.feature-item {
+    /* push text right */
+    /* so icon is relative to parent */
+    position: relative;
+    padding-left: 94px;
+    padding-bottom: 2.5rem;
+
+    &__icon {
+        position: absolute;
+        left: 0;
+    }
+
+    &__title {
+        font-size: 1.875rem;
+        font-weight: 300;
+        margin-bottom: 0.8rem;
+    }
+}
