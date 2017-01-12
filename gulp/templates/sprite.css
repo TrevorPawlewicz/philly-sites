@@ -1,0 +1,11 @@
+/* from gulp/tasks/sprite.ccs */
+/* more info at https://github.com/jkphl/svg-sprite */
+
+{{#shapes}}
+    .icon--{{base}} {
+        width: {{width.outer}}px;
+        height: {{height.outer}}px;
+        background-image: url('/temp/sprite/css/{{{sprite}}}');
+        background-position: {{position.relative.xy}};
+    }
+{{/shapes}}
