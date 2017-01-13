@@ -1,11 +1,9 @@
 // purpose: for gulp to put all icon files into one file...
-
 var gulp      = require('gulp');
 var svgSprite = require('gulp-svg-sprite');
 var rename    = require('gulp-rename');
+var del       = require('del'); // to delete sprites
 //----------------------------------------------------------------------------
-
-
 var config = {
     mode: {
         css: {
@@ -19,33 +17,39 @@ var config = {
     }
 }
 
+// remove old sprites:
+gulp.task('beginClean', function() {
+    return del(['./app/temp/sprite', './app/assets/images/sprites']);
+});
 
 // create the sprite:
 //        name your task, task
-gulp.task('createSprite', function() {
+gulp.task('createSprite', ['beginClean'], function() {
     //
     return gulp.src('./app/assets/images/icons/**/*.svg')
             .pipe(svgSprite(config))
             .pipe(gulp.dest('./app/temp/sprite/'));
 });
 
-//
+// copy the sprite graphics into our new folder:
+//                              dependency (won't run until this is completed)
 gulp.task('copySpriteGraphic', ['createSprite'], function() {
     //
     return gulp.src('./app/temp/sprite/css/**/*.svg')
             .pipe(gulp.dest('./app/assets/images/sprites'));
 });
 
-
-// copy the sprite into our folder structure:
-//                            dependency (won't run until this is completed)
+// copy the sprite CSS into our folder structure:
 gulp.task('copySpriteCSS', ['createSprite'], function() {
     //
     return gulp.src('./app/temp/sprite/css/*.css')
             .pipe(rename('_sprite.css'))
             .pipe(gulp.dest('./app/assets/styles/modules'));
 });
-
+// delete our temp files creted by gulp
+gulp.task('endClean', ['copySpriteGraphic', 'copySpriteCSS'], function(){
+    return del('./app/temp/sprite');
+});
 
 // run ALL these tasks...
-gulp.task('icons', ['createSprite', 'copySpriteGraphic', 'copySpriteCSS']);
+gulp.task('icons', ['beginClean', 'createSprite', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);

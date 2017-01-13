@@ -713,8 +713,9 @@ a {
   margin-bottom: 0.6rem;
 }
 @media (min-width: 530px) {
-  .section-title__icon {/*position: relative;
-            top: 8px;*/
+  .section-title__icon {
+    position: relative;
+    top: 8px;
     display: inline-block;
     margin-left: 0;
     margin-right: 0.5rem;
