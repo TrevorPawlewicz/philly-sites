@@ -3,15 +3,6 @@ var watch        = require('gulp-watch');
 var browserSync  = require('browser-sync').create(); // only import create func
 //----------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
 // type "gulp watch" in command line
 gulp.task('watch', function(){
     // syncs out browser with our changes
@@ -31,10 +22,18 @@ gulp.task('watch', function(){
     watch('./app/assets/styles/**/*.css', function() {
         gulp.start('cssInject'); // call gulp.task 'cssInject'
     });
-});
 
+    // javascript changes:
+    watch('./app/assets/scripts/**/*.js', function(){
+        gulp.start('scriptsRefesh');
+    });
+});
 
 //                     run denpendencies before func
 gulp.task('cssInject', ['styles'], function() {
     return gulp.src('app/temp/styles/styles.css').pipe(browserSync.stream());
+});
+
+gulp.task('scriptsRefesh', ['scripts'], function(){
+    browserSync.reload();
 });
