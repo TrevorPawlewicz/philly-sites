@@ -82,6 +82,7 @@
 	    function MobileMenu() {
 	        _classCallCheck(this, MobileMenu);
 
+	        this.siteHeader = (0, _jquery2.default)(".site-header");
 	        this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
 	        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
 	        this.events();
@@ -99,6 +100,7 @@
 	        value: function toggleMenu() {
 	            //               jQuery func
 	            this.menuContent.toggleClass("site-header__menu-content--is-visible");
+	            this.siteHeader.toggleClass("site-header--is-expanded");
 	        }
 	    }]);
 
