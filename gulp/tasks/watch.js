@@ -29,7 +29,7 @@ gulp.task('watch', function(){
     });
 });
 
-//                     run denpendencies before func
+//                     run dependencies before func
 gulp.task('cssInject', ['styles'], function() {
     return gulp.src('app/temp/styles/styles.css').pipe(browserSync.stream());
 });
