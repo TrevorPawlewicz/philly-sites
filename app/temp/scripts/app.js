@@ -46,23 +46,23 @@
 
 	'use strict';
 
-	var _MobileMenu = __webpack_require__(2);
+	var _MobileMenu = __webpack_require__(4);
 
 	var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
-	var _RevealOnScroll = __webpack_require__(4);
+	var _RevealOnScroll = __webpack_require__(6);
 
 	var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
-	var _StickyHeader = __webpack_require__(6);
+	var _StickyHeader = __webpack_require__(8);
 
 	var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
-	var _Modal = __webpack_require__(8);
+	var _Modal = __webpack_require__(10);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _jquery = __webpack_require__(3);
+	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -78,7 +78,9 @@
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -90,7 +92,7 @@
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //var $ = require('jquery'); // ES5
 
 
-	var _jquery = __webpack_require__(3);
+	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -136,7 +138,7 @@
 	exports.default = MobileMenu; // ES6 same as ES5
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10362,7 +10364,7 @@
 
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10373,11 +10375,11 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(3);
+	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _noframework = __webpack_require__(5);
+	var _noframework = __webpack_require__(7);
 
 	var _noframework2 = _interopRequireDefault(_noframework);
 
@@ -10423,7 +10425,7 @@
 	exports.default = RevealOnScroll;
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports) {
 
 	/*!
@@ -11186,7 +11188,7 @@
 	;
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11197,15 +11199,15 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(3);
+	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _noframework = __webpack_require__(5);
+	var _noframework = __webpack_require__(7);
 
 	var _noframework2 = _interopRequireDefault(_noframework);
 
-	var _jquerySmoothScroll = __webpack_require__(7);
+	var _jquerySmoothScroll = __webpack_require__(9);
 
 	var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
 
@@ -11217,6 +11219,7 @@
 	    function StickyHeader() {
 	        _classCallCheck(this, StickyHeader);
 
+	        this.lazyImages = (0, _jquery2.default)(".lazyload");
 	        this.siteHeader = (0, _jquery2.default)(".site-header");
 	        this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
 	        this.createHeaderWaypoint();
@@ -11224,9 +11227,17 @@
 	        this.headerLinks = (0, _jquery2.default)(".primary-nav a");
 	        this.createPageSectionWaypoints();
 	        this.addSmoothScrolling();
+	        this.refreshWaypoints();
 	    }
 
 	    _createClass(StickyHeader, [{
+	        key: 'refreshWaypoints',
+	        value: function refreshWaypoints() {
+	            this.lazyImages.load(function () {
+	                Waypoint.refreshAll();
+	            });
+	        }
+	    }, {
 	        key: 'addSmoothScrolling',
 	        value: function addSmoothScrolling() {
 	            this.headerLinks.smoothScroll();
@@ -11239,7 +11250,6 @@
 	            new Waypoint({
 	                element: this.headerTriggerElement[0],
 	                handler: function handler(direction) {
-	                    console.log("===>direction = " + direction);
 	                    if (direction === "down") {
 	                        that.siteHeader.addClass("site-header--dark");
 	                    } else {
@@ -11289,7 +11299,7 @@
 	exports.default = StickyHeader;
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11302,7 +11312,7 @@
 	(function(factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if (typeof module === 'object' && module.exports) {
 	    // CommonJS
 	    factory(require('jquery'));
@@ -11636,7 +11646,7 @@
 
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11647,7 +11657,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(3);
+	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 

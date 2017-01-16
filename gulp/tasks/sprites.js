@@ -3,10 +3,23 @@ var gulp      = require('gulp');
 var svgSprite = require('gulp-svg-sprite');
 var rename    = require('gulp-rename');
 var del       = require('del'); // to delete sprites
+var svg2png   = require('gulp-svg2png'); //
 //----------------------------------------------------------------------------
 var config = {
+    shape: {
+        spacing: {
+            padding: 1
+        }
+    },
     mode: {
         css: {
+            variables: {
+                replaceSvgWithPng: function(){
+                    return function(sprite, render){
+                        return render(sprite).split('.svg').join('.png');
+                    }
+                }
+            },
             sprite: 'sprite.svg',
             render: {
                 css: {
@@ -31,11 +44,18 @@ gulp.task('createSprite', ['beginClean'], function() {
             .pipe(gulp.dest('./app/temp/sprite/'));
 });
 
+// create a PNG copy of the SVG
+gulp.task('createPngCopy', ['createSprite'], function() {
+    return gulp.src('./app/temp/sprite/css/*.svg')
+            .pipe(svg2png())
+            .pipe(gulp.dest('./app/temp/sprite/css'));
+});
+
 // copy the sprite graphics into our new folder:
 //                              dependency (won't run until this is completed)
-gulp.task('copySpriteGraphic', ['createSprite'], function() {
+gulp.task('copySpriteGraphic', ['createPngCopy'], function() {
     //
-    return gulp.src('./app/temp/sprite/css/**/*.svg')
+    return gulp.src('./app/temp/sprite/css/**/*.{svg, png}')
             .pipe(gulp.dest('./app/assets/images/sprites'));
 });
 
@@ -52,4 +72,4 @@ gulp.task('endClean', ['copySpriteGraphic', 'copySpriteCSS'], function(){
 });
 
 // run ALL these tasks...
-gulp.task('icons', ['beginClean', 'createSprite', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);
+gulp.task('icons', ['beginClean', 'createSprite', 'createPngCopy', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);

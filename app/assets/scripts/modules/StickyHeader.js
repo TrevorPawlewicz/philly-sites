@@ -33,7 +33,6 @@ class StickyHeader {
         new Waypoint({
             element: this.headerTriggerElement[0],
             handler: function(direction) {
-                console.log("===>direction = " + direction);
                 if (direction === "down") {
                     that.siteHeader.addClass("site-header--dark");
                 } else {
