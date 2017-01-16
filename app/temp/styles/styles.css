@@ -1090,6 +1090,9 @@ a {
     padding: 12px 0;
     background-color: transparent;
   }
+  .primary-nav a.is-current-link {
+    color: #d59541;
+  }
 }
 .reveal-item {
     opacity: 0;
