@@ -46,23 +46,23 @@
 
 	'use strict';
 
-	var _MobileMenu = __webpack_require__(1);
+	var _MobileMenu = __webpack_require__(2);
 
 	var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
-	var _RevealOnScroll = __webpack_require__(3);
+	var _RevealOnScroll = __webpack_require__(4);
 
 	var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
-	var _StickyHeader = __webpack_require__(5);
+	var _StickyHeader = __webpack_require__(6);
 
 	var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
-	var _Modal = __webpack_require__(7);
+	var _Modal = __webpack_require__(8);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _jquery = __webpack_require__(2);
+	var _jquery = __webpack_require__(3);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -77,7 +77,8 @@
 	var modal = new _Modal2.default();
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -89,7 +90,7 @@
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //var $ = require('jquery'); // ES5
 
 
-	var _jquery = __webpack_require__(2);
+	var _jquery = __webpack_require__(3);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -135,7 +136,7 @@
 	exports.default = MobileMenu; // ES6 same as ES5
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10361,7 +10362,7 @@
 
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10372,11 +10373,11 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(2);
+	var _jquery = __webpack_require__(3);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _noframework = __webpack_require__(4);
+	var _noframework = __webpack_require__(5);
 
 	var _noframework2 = _interopRequireDefault(_noframework);
 
@@ -10422,7 +10423,7 @@
 	exports.default = RevealOnScroll;
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*!
@@ -11185,7 +11186,7 @@
 	;
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11196,15 +11197,15 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(2);
+	var _jquery = __webpack_require__(3);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _noframework = __webpack_require__(4);
+	var _noframework = __webpack_require__(5);
 
 	var _noframework2 = _interopRequireDefault(_noframework);
 
-	var _jquerySmoothScroll = __webpack_require__(6);
+	var _jquerySmoothScroll = __webpack_require__(7);
 
 	var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
 
@@ -11288,7 +11289,7 @@
 	exports.default = StickyHeader;
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11301,7 +11302,7 @@
 	(function(factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if (typeof module === 'object' && module.exports) {
 	    // CommonJS
 	    factory(require('jquery'));
@@ -11635,7 +11636,7 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11646,7 +11647,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(2);
+	var _jquery = __webpack_require__(3);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
