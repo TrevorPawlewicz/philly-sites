@@ -429,6 +429,7 @@ a {
 .large-hero {
     position: relative;
     border-bottom: 8px solid #2f5572;
+    text-shadow: 2px 2px 1px rgba(0, 0, 255, 0.4);
 }
 .large-hero__image {
   display: block;
@@ -471,8 +472,7 @@ a {
 .large-hero__description {
   color: #FFF;/* rem: relative to ROOT page (HTML element) */
   font-size: 1.1rem;
-  font-weight: 100;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);/* 480px / 16px (estimated default font size) = 30 */
+  font-weight: 100;/*text-shadow: 2px 2px 1px rgba(0, 0, 255, 0.4);*//* 480px / 16px (estimated default font size) = 30 */
   max-width: 30rem;
   margin-left: auto;
   margin-right: auto;
@@ -534,7 +534,7 @@ a {
 }
 @media (min-width: 1010px) {
   .page-section--testimonials.lazyloaded {
-    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background: url('/assets/images/Philadelphia_1872.jpg') top center no-repeat;
     background-size: cover;
   }
 }
@@ -712,6 +712,12 @@ a {
 }
 .section-title--blue {
   color: #2f5572;
+}
+@media (min-width: 1010px) {
+  .section-title--blue {
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+  }
 }
 .section-title--less-margin {
   margin-bottom: 1.3rem;

@@ -1,6 +1,7 @@
 .large-hero {
     position: relative;
     border-bottom: 8px solid $mainBlue;
+    text-shadow: 2px 2px 1px rgba(0, 0, 255, 0.4);
 
     &__image {
         display: block;
@@ -45,7 +46,7 @@
         /* rem: relative to ROOT page (HTML element) */
         font-size: 1.1rem;
         font-weight: 100;
-        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        /*text-shadow: 2px 2px 1px rgba(0, 0, 255, 0.4);*/
         /* 480px / 16px (estimated default font size) = 30 */
         max-width: 30rem;
         margin-left: auto;
