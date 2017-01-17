@@ -17,9 +17,9 @@ class StickyHeader {
     }
 
     refreshWaypoints() {
-        this.lazyImages.load(function(){
+        //this.lazyImages.load(function() {
             Waypoint.refreshAll();
-        });
+        //});
     }
 
     addSmoothScrolling() {

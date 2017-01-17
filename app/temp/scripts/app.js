@@ -54,6 +54,10 @@
 
 	var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
 	var _StickyHeader = __webpack_require__(8);
 
 	var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
@@ -61,10 +65,6 @@
 	var _Modal = __webpack_require__(10);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11233,9 +11233,9 @@
 	    _createClass(StickyHeader, [{
 	        key: 'refreshWaypoints',
 	        value: function refreshWaypoints() {
-	            this.lazyImages.load(function () {
-	                Waypoint.refreshAll();
-	            });
+	            //this.lazyImages.load(function() {
+	            Waypoint.refreshAll();
+	            //});
 	        }
 	    }, {
 	        key: 'addSmoothScrolling',

@@ -1,9 +1,11 @@
 // import the class from the JS file:
 import MobileMenu from './modules/MobileMenu.js';
 import RevealOnScroll from './modules/RevealOnScroll.js';
-import StickyHeader from './modules/StickyHeader.js';
-import Modal from './modules/Modal.js'
 import $ from 'jquery';
+import StickyHeader from './modules/StickyHeader.js';
+import Modal from './modules/Modal.js';
+
+
 
 
 // save new instance to our variables
