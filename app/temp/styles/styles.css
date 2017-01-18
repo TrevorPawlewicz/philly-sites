@@ -493,6 +493,14 @@ a {
 .btn--orange {
   background-color: #ff3333;
 }
+.btn--trev:hover {
+  color: #0000FF;
+  text-shadow:
+        -1px -1px 0 #00FFFF,
+        1px -1px 0 #00FFFF,
+        -1px 1px 0 #00FFFF,
+        1px 1px 0 #00FFFF;
+}
 .btn--large {
   padding: 1.1rem 1.9rem;
 }
