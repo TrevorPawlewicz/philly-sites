@@ -379,6 +379,7 @@ img {
 }
 a {
     color: #ff3333;
+    text-decoration: none;
 }
 .wrapper {
     overflow: hidden;
